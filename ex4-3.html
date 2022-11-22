@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>4.5 表单验证-购票</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      body{
+        font-size:13px;
+      }
+      .mainDiv{
+        border:2px solid #C8DCDB;
+        width:900px;
+        margin:0px auto;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+        overflow:hidden;
+      }
+      .title{
+        background-color:#94BFE2;
+        border-bottom:1px solid #C8DCDB;
+        height:50px;
+        line-height:50px;
+        font-weight:bold;
+        padding-left:10px;
+        font-size:15px;
+      }
+      .line{
+        width:700px;
+        height:30px;
+        line-height:30px;
+        font-weight:bold;
+        margin:0px auto;
+        margin-top:30px;
+        border-bottom:1px solid black;
+      }
+      .item{
+        width:700px;
+        display:flex;
+        margin:10px auto;
+      }
+      .item div:nth-of-type(1){
+        width:100px;
+        text-align:right;
+      }
+      .item div:nth-of-type(2){
+        width:600px;
+      }
+      .txt1{
+        width:200px;
+      }
+      .txt2{
+        width:300px;
+      }
+    
+      span{
+        color:red;
+        margin-left:10px;
+      }
+	   p{
+	        	text-align: center;
+	        }
+    
+    </style>
+    <script type="text/javascript">
+      
+      function checkReg(){
+        
+        document.getElementById("nameSpan").innerHTML = "";
+        document.getElementById("telSpan").innerHTML = "";
+        document.getElementById("time").innerHTML = "";
+        
+        
+        if(document.frm.userName.value == ""){
+          document.getElementById("nameSpan").innerHTML = "姓名不能为空！";
+          document.frm.userName.focus();
+          return false;
+        }
+        else if(document.frm.tel.value == ""){
+          document.getElementById("telSpan").innerHTML = "联系电话不能为空！";
+          document.frm.tel.focus();
+          return false;
+        }
+        else if(document.frm.mailBox.value == ""){
+          document.getElementById("time").innerHTML = "邮件地址不能为空！";
+          document.frm.mailBox.focus();
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    
+    <form name="frm" method="get" action="http://www.baidu.com" onsubmit="return checkReg()">
+    
+    <div class="mainDiv">
+      
+      
+      <div class="title">购票表单</div>
+      
+      
+      <div class="line">基本信息（必填）</div>
+      <div class="item">
+        <div>姓名：</div>
+        <div><input type="text" name="userName" class="txt1" /><span id="nameSpan"></span></div>
+      </div>
+      <div class="item">
+        <div>性别：</div>
+        <div>
+          <input type="radio" name="sex" value="男" checked/>先生
+          <input type="radio" name="sex" value="女" />女士
+        </div>
+      </div>
+      <div class="item">
+        <div>请选择出游方式：</div>
+        <div>
+          <select name="userType">
+            <option value="1">跟团游</option>
+            <option value="2" selected>自驾游</option>
+          </select>
+        </div>
+      </div>
+      <div class="item">
+        <div>联系电话：</div>
+        <div><input type="text" name="tel" class="txt1" /><span id="telSpan"></span></div>
+      </div>
+      <div class="item">
+        <div>出游日期日期：</div>
+        <div><input type="text" name="mailBox" class="txt2" /><span id="time"></span></div>
+      </div>
+            
+    </div>    
+    </form>
+    <p><a href="index.html">返回首页</a></p>
+  </body>
+</html>
+
